@@ -1,0 +1,6 @@
+.outer {
+  background: linear-gradient(to bottom, #cfd9ff, #ffffff);
+  position: relative;
+  z-index: 50;
+}
+
