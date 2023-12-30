@@ -1,28 +1,23 @@
 import React from "react";
-
+import "./Footer.css";
 function Footer() {
   return (
-    <div className="bg-[#04102a] text-[#8A99B4]">
-      <div className="flex flex-row p-4 pt-32 pb-28">
-        <div className="w-1/4 p-4">
-          <h3 className="text-7xl font-medium text-white md:text-4xl xl:text-2xl">
-            About Us
-          </h3>
-          <p className="mt-8">
+    <div className="footer">
+      <div className="container">
+        <div className="about">
+          <h3 className=" about-heading">About Us</h3>
+          <p className="about-paragraph">
             Ombrulla is an AI-driven company specializing in extracting insights
             from diverse data sources, including photos, videos, and data lakes.
             Our tailored solutions help businesses make data-driven decisions
             and improve their bottom line through automation and AI-powered
             analysis.
           </p>
-          <div class="flex space-x-24 lg:space-x-12 xl:space-x-6 mt-8">
-            <a
-              href="https://www.facebook.com/Ombrulla.UK"
-              class="hover:text-gray-500 text-white"
-            >
+          <div className="social-icons-container">
+            <a href="https://www.facebook.com/Ombrulla.UK" class="social-icon">
               <span class="sr-only">Facebook</span>
               <div
-                class="h-16 w-16 md:h-12 md:w-12 lg:w-8 lg:h-8 xl:h-6 xl:w-6"
+                className="h-16 w-16 md:h-12 md:w-12 lg:w-8 lg:h-8 xl:h-6 xl:w-6"
                 aria-hidden="true"
               >
                 <svg
@@ -34,10 +29,7 @@ function Footer() {
                 </svg>
               </div>
             </a>
-            <a
-              href="https://www.instagram.com/ombrulla/"
-              class="hover:text-gray-500 text-white"
-            >
+            <a href="https://www.instagram.com/ombrulla/" class="social-icon">
               <span class="sr-only">Instagram</span>
               <div
                 class="h-16 w-16 md:h-12 md:w-12 lg:w-8 lg:h-8 xl:h-6 xl:w-6"
@@ -52,10 +44,7 @@ function Footer() {
                 </svg>
               </div>
             </a>
-            <a
-              href="https://twitter.com/ombrulla"
-              class="hover:text-gray-500 text-white"
-            >
+            <a href="https://twitter.com/ombrulla" class="social-icon">
               <span class="sr-only">Twitter</span>
               <div
                 class="h-16 w-16 md:h-12 md:w-12 lg:w-8 lg:h-8 xl:h-6 xl:w-6"
@@ -72,7 +61,7 @@ function Footer() {
             </a>
             <a
               href="https://www.linkedin.com/company/ombrulla/"
-              class="hover:text-gray-500 text-white"
+              class="social-icon"
             >
               <span class="sr-only">LinkedIn</span>
               <div
@@ -96,7 +85,7 @@ function Footer() {
             </a>
             <a
               href="https://www.youtube.com/channel/UCXAhwrvB4Yyw3mg7h4pzUUw"
-              class="hover:text-gray-500 text-white"
+              class="social-icon"
             >
               <span class="sr-only">YouTube</span>
               <div
@@ -119,48 +108,46 @@ function Footer() {
             </a>
           </div>
         </div>
-        <div className="w-1/4 p-4">
-          <h3 className="text-7xl font-medium text-white md:text-4xl xl:text-2xl">
-            Our Services
-          </h3>
-          <div className="mt-8 flex flex-col gap-y-4">
+
+        <div class="services-container">
+          <h3 class="services-header">Our Services</h3>
+          <div class="services-list">
             <p>AI Infrastructure Inspection</p>
             <p>AI Visual Inspection</p>
             <p>AI Data Analytics</p>
             <p>AI People Tracking</p>
           </div>
         </div>
-        <div className="w-1/4 p-4">
-          <h3 className="text-7xl font-medium text-white md:text-4xl xl:text-2xl">
-            Our Solutions
-          </h3>
-          <div className="mt-8 flex flex-col gap-y-4">
+        <div className="solutions-container">
+          <h3 className=" solutions-header">Our Solutions</h3>
+          <div className="solutions-list">
             <p>Asset Performance Management</p>
             <p>Job Grading & Evaluation</p>
             <p>Compensation Management</p>
           </div>
         </div>
-        <div className="w-1/4 p-4">
-          <h3 className="text-7xl font-medium text-white md:text-4xl xl:text-2xl">
-            Reach Us
-          </h3>
-          <div className="mt-8 flex flex-col gap-y-4">
+        <div className="contact-container ">
+          <h3 className="contact-header">Reach Us</h3>
+          <div className="contact-list">
             <p>
-              United Kingdom, 53 Denton close <br />Redhill, Surrey, RH1 5LB <br /> +44 787
-              999 3892
+              United Kingdom, 53 Denton close <br />
+              Redhill, Surrey, RH1 5LB <br /> +44 787 999 3892
             </p>
-            <p>Germany, Schützenstraße 51A <br />Lübeck, 23558  <br />+49 179 512 5812</p>
             <p>
-              India, No. 154/20, Royal Space <br /> Third Floor TI, HSR Layout, <br />
+              Germany, Schützenstraße 51A <br />
+              Lübeck, 23558 <br />
+              +49 179 512 5812
+            </p>
+            <p>
+              India, No. 154/20, Royal Space <br /> Third Floor TI, HSR Layout,{" "}
+              <br />
               Bangalore, Karnataka <br /> 560102 <br /> +91 85900 56435
             </p>
           </div>
         </div>
       </div>
-      <div class="border-t border-gray-900/10 pt-8  mt-12">
-        <p class="text-xs  text-gray-500">
-          © 2020 Ombrulla, Inc. All rights reserved.
-        </p>
+      <div class="footer-container">
+        <p class="copyright-text">© 2020 Ombrulla, Inc. All rights reserved.</p>
       </div>
     </div>
   );
