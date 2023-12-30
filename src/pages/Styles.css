@@ -3,4 +3,69 @@
   position: relative;
   z-index: 50;
 }
+.navbar {
+  background-color: #cfd9ff;
+}
+.linear-gradient {
+  background-color: transparent;
+  background-image: radial-gradient(
+    at center right,
+    #7590f341 17%,
+    #4268f000 76%
+  );
+}    
 
+.services-section {
+  display: flex;
+  margin-top: 96px;
+  justify-content: space-around;
+  padding-left: 18vw;
+}
+
+@media (min-width: 768px) {
+  .services-section {
+  margin-top: 2px;
+  padding-left: 6vw;
+
+  }
+}
+
+.brand-section {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .brand-section {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .brand-section {
+    margin-top: 2rem; 
+  }
+}
+
+.brand {
+  grid-column: span 1;
+  display: flex;
+  justify-content: center;
+  background-color: #f7fafc; 
+  padding: 2rem; 
+}
+
+.blog-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; 
+  padding: 5rem;
+}
+
+@media (min-width: 768px) {
+  .blog-section {
+    flex-direction: row;
+  }
+}
