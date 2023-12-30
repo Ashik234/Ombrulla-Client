@@ -1,0 +1,92 @@
+.navbar-container {
+  padding: 4px 0;
+  display: flex;
+  padding-left: 3.5rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-top: 12px;
+  margin-right: 66px;
+}
+.navbar-outer {
+  display: block;
+  flex-direction: row;
+}
+.logo {
+  height: 30px;
+  margin-left: 10px;
+}
+.content {
+  font-weight: bold;
+  color: blue;
+}
+.heading {
+  font-weight: bold;
+  cursor: pointer;
+}
+.heading:hover {
+  color: blue;
+}
+.arrow {
+  cursor: pointer;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.navbar-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  display: none;
+  position: relative;
+  gap: 1.5rem;
+  margin-right: 2.75rem;
+}
+
+@media (min-width: 768px) {
+  .navbar-menu {
+    display: flex;
+  }
+}
+
+.menu-item-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .menu-item-dropdown {
+    position: relative;
+  }
+}
+.dropdown {
+  position: absolute;
+  left: 0;
+  z-index: 90;
+  top: 100%;
+  padding-top: 1.25rem;
+  display: none;
+  flex-direction: column;
+  font-weight: 600;
+  transition: all 300ms ease-in-out;
+  font-family: sans-serif;
+  width: 16rem; /* Adjust the width as needed */
+}
+
+.dropdown.visible {
+  display: flex;
+}
+
+
+.list-item {
+  border-bottom: 1px solid #d1d5db; /* Change color as needed */
+  padding: 1.25rem 0.938rem;
+  font-weight: 600;
+  color: #000;
+  transition: color 0.3s ease-in-out;
+}
+
+.list-item:hover {
+  color: #3b82f6; /* Change color on hover as needed */
+}

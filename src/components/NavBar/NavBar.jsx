@@ -2,61 +2,90 @@ import React, { useState } from "react";
 import Ombrulla from "../../assets/OmbrullaLogo.svg";
 import Arrow from "/arrow_drop_down.svg";
 import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 function NavBar() {
-  const [isServicesHovered, setIsServicesHovered] = useState(false);
-  const [isProductHovered, setIsProductHovered] = useState(false);
+  const [showServicesDropdown, setShowServicesDropdown] = useState(false);
+  const [showProductDropdown, setShowProductDropdown] = useState(false);
+
+  const handleServicesHover = () => {
+    setShowServicesDropdown(true);
+    setShowProductDropdown(false);
+  };
+
+  const handleProductHover = () => {
+    setShowProductDropdown(true);
+    setShowServicesDropdown(false);
+  };
+
+  const handleDropdownLeave = () => {
+    setShowServicesDropdown(false);
+    setShowProductDropdown(false);
+  };
 
   return (
-    <div className="md:px-14 px-0 p-4 flex flex-row justify-between items-center md:mx-10 mx-6">
-      <img src={Ombrulla} className="h-12 md:h-8" alt="" />
-      <div className="md:flex flex-row hidden gap-x-6 mr-11">
-        <h1 className="font-bold text-blue-700">Home</h1>
-        <div
-          className="relative group"
-          onMouseEnter={() => setIsServicesHovered(true)}
-          onMouseLeave={() => setIsServicesHovered(false)}
-        >
-          <div className="flex flex-row">
-            <h1 className="font-bold group-hover:text-blue-700 cursor-pointer">
-              Services
-            </h1>
-            <img src={Arrow} alt="" />
-          </div>
-
-          {isServicesHovered && (
-            <div className="absolute top-full left-0 bg-white p-4  border border-gray-300">
-              <p>Service 1</p>
-              <hr />
-              <p>Service 2</p>
+    <div className="navbar-container" onMouseLeave={handleDropdownLeave}>
+      <img src={Ombrulla} className="logo" alt="" />
+      <div className="navbar-menu">
+        <h1 className="content">Home</h1>
+        <div className="menu-item-dropdown" onMouseEnter={handleServicesHover}>
+          <h1 className="heading">Services</h1>
+          {showServicesDropdown && (
+            <div className="dropdown visible">
+              <ul className="bg-white">
+                <Link
+                  to="/ai-visual-inspection"
+                  className="block"
+                  previewlistener="true"
+                >
+                  <li className="">AI Visual Inspection</li>
+                </Link>
+                <Link
+                  to="/ai-visual-inspection"
+                  className="block"
+                  previewlistener="true"
+                >
+                  <li className="list-item">AI Visual Inspection</li>
+                </Link>
+                <Link
+                  to="/ai-visual-inspection"
+                  className="block"
+                  previewlistener="true"
+                >
+                  <li className="list-item">AI Visual Inspection</li>
+                </Link>
+                <Link
+                  to="/ai-visual-inspection"
+                  className="block"
+                  previewlistener="true"
+                >
+                  <li className="list-item">AI Visual Inspection</li>
+                </Link>
+              </ul>
             </div>
           )}
+          <img src={Arrow} alt="" className="arrow" />
         </div>
-        <div
-          className="relative group"
-          onMouseEnter={() => setIsProductHovered(true)}
-          onMouseLeave={() => setIsProductHovered(false)}
-        >
-          <div className="flex flex-row">
-            <h1 className="font-bold group-hover:text-blue-700 cursor-pointer">
-              Product
-            </h1>
-            <img src={Arrow} alt="" />
-          </div>
-          {isProductHovered && (
-            <div className="absolute top-full left-0 bg-white p-4 border border-gray-300">
-              <p>Product 1</p>
-              <hr />
-              <p>Product 2</p>
+        <div className="menu-item-dropdown" onMouseEnter={handleProductHover}>
+          <h1 className="heading">Product</h1>
+          {showProductDropdown && (
+            <div className="dropdown visible">
+              <ul className="bg-white">
+                <Link
+                  to="/ai-visual-inspection"
+                  className="block"
+                  previewlistener="true"
+                >
+                  <li className="list-item">Asset performance</li>
+                </Link>
+              </ul>
             </div>
           )}
+          <img src={Arrow} alt="" className="arrow" />
         </div>
-
-        <h1 className="font-bold hover:text-blue-700 cursor-pointer">About</h1>
-        <h1 className="font-bold hover:text-blue-700 cursor-pointer">Blog</h1>
-        <h1 className="font-bold hover:text-blue-700 cursor-pointer">
-          Contact
-        </h1>
+        <h1 className="heading">About</h1>
+        <h1 className="heading">Blog</h1>
+        <h1 className="heading">Contact</h1>
       </div>
     </div>
   );
